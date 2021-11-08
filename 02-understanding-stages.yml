@@ -16,17 +16,23 @@ stages:
 - stage:build
   jobs:
   - job:FirstJob
-    - bash:echo:build FirstJob
+  steps:
+  - bash:echo:build FirstJob
   - job:SecondJob
-    - bash:echo:build SecondJob
+  steps:
+  - bash:echo:build SecondJob
+
 - stage:DevDeployjob
   - job:FirstJob
-    - bash:echo:DevDeployJob
+  steps:
+  - bash:echo:DevDeployJob
 
 - stage:QADeployJob
   - job:FirstJob
-    - bash:echo:QA Deploy Job
+  steps:
+  - bash:echo:QA Deploy Job
 
 - stage:ProdDeploy
   - job:FirstJob
-    - bash:echo:prodDeployJob
+  steps:
+  - bash:echo:prodDeployJob
